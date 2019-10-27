@@ -72,4 +72,4 @@ while run_again==True:
         else:
             print('Заданной папки нет')  # Можно дальше создать ее, или искать на диске, но это уже другая история ))
 
-    if my_choice==11: run_again=False
+    if my_choice==12: run_again=False
