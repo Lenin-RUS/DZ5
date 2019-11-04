@@ -37,3 +37,4 @@ def play_game():
         print("Процент неправильных ответов: ", 100 - sum(good_ans) * 100 / len(good_ans), "%")
         cont = input('Продолжить игру? (Yes/No)  ')
     print('Good Luck')
+    return 'Finish him'  #Строчка для assert
