@@ -19,3 +19,10 @@ def test_is_correct_choice():
 
 def test_filenames():
     assert Leonids_funcs.filenames() == ['.gitignore', '123.txt', 'account_usage.py', 'file_console_manager.py', 'Leonids_funcs.py', 'LICENSE', 'main_menu.py', 'task.txt', 'test.py', 'test_filemanager.py', 'test_python.py', 'victory.py']
+
+import account_usage
+
+def test_get_acc_data():
+    with open('acc_data.txt', 'r') as f:
+        bank_summ=float(f.read())
+    assert account_usage.get_acc_data() == bank_summ

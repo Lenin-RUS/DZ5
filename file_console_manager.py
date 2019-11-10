@@ -4,16 +4,13 @@ import shutil
 import platform
 import victory
 import account_usage
-from IPython.display import clear_output  # Не работает ((((
 
 account = 0.0
 purchases = {}
 
 run_again=True
 while run_again==True:
-    clear_output()  # Не работает ((((
     my_choice = main_menu.main_menu()
-    # print(my_choice)
 
     # после выбора пользователь вводит название папки, создаем её в рабочей директории
     if my_choice==1:
@@ -73,3 +70,10 @@ while run_again==True:
             print('Заданной папки нет')  # Можно дальше создать ее, или искать на диске, но это уже другая история ))
 
     if my_choice==12: run_again=False
+
+    if my_choice==13:
+        with open('listdir.txt', 'w') as f:
+            onlydirs = [f for f in os.listdir() if os.path.isdir(f)]
+            onlyfiles = [f for f in os.listdir() if os.path.isfile(f)]
+            f.write(f'files:{onlyfiles} \n')
+            f.write(f'dirs:{onlydirs}')
