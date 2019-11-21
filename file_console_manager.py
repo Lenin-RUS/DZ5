@@ -15,11 +15,7 @@ while run_again==True:
     # после выбора пользователь вводит название папки, создаем её в рабочей директории
     if my_choice==1:
         new_dir_name=input('Введите имя новой папки: ')
-        if not os.path.exists(new_dir_name):
-            os.mkdir(new_dir_name)
-        else:
-            print('такая папка уже есть!')
-
+        os.mkdir(new_dir_name) if not os.path.exists(new_dir_name) else print('такая папка уже есть!')    # <----------------------------------1 Тернарный оператор
     #после выбора пользователь вводит название папки или файла, удаляем из рабочей директории если такой есть
     if my_choice==2:
         file_or_dir_to_del=input('Введите имя папки или файла для удаления: ')
@@ -36,16 +32,16 @@ while run_again==True:
 
     #вывод только папок которые находятся в рабочей папке
     if my_choice==5:
-        onlydirs = [f for f in os.listdir() if os.path.isdir(f)]
+        onlydirs = [f for f in os.listdir() if os.path.isdir(f)]    # <----------------------------------2 (Это уже давно написал)
         print(onlydirs)
 
     #вывод только файлов которые находятся в рабочей папке
     if my_choice==6:
-        onlyfiles = [f for f in os.listdir() if os.path.isfile(f)]
+        onlyfiles = [f for f in os.listdir() if os.path.isfile(f)]    # <----------------------------------3 (Это уже тоже давно написал)
         print(onlyfiles)
 
     #вывести информацию об операционной системе (можно использовать пример из 1-го урока)
-    if my_choice==7: print(platform.uname())
+    if (my_choice==7): print(platform.uname())
 
     #вывод информации о создателе программы
     if my_choice==8: print(os.getlogin())
